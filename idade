@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificar fase da vida</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="ida.css">
+</head>
+<body>
+	<div>
+	<div class="titulo"><h1>CLASSIFICAÇAO POR IDADE</h1></div>
+	<label for="nome">Nome:</label>
+	<input type="text" id="nome"><br><br>,
+	<label for="idade">Idade:</label>
+	<input type="number" id="idade"><br><br>
+	<button onclick="verificarFaseVida()">Verificar fase da vida</button><br><br>
+	<div id="resultado"></div>
+</div>
+
+	<script>
+		function verificarFaseVida() {
+			let nome = document.getElementById("nome").value;
+			let idade = parseInt(document.getElementById("idade").value);
+			let fase;
+
+			if (idade <= 11) {
+				fase = "Criança";
+			} else if (idade >= 12 && idade <= 20) {
+				fase = "Adolescente";
+			} else if (idade >= 21 && idade <= 64) {
+				fase = "Adulto";
+			} else if (idade >= 65 && idade <= 10000000) {
+				fase = "Idoso";
+			}
+
+			let resultado = document.getElementById("resultado");
+			resultado.innerHTML = nome + " está na fase da vida de " + fase;
+		}
+	</script>
+</body>
+</html>
